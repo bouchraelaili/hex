@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Convertisseur</title>
+	<script type="text/javascript">
+function xdecimal()
+{
+decimal = document.getElementById("decimal");
+hexadecimal = document.getElementById("hexadecimal");
+binaire = document.getElementById("binaire");
+octal=document.getElementById("octal");
+ 
+hexadecimal.value = (decimal.value-0).toString(16);
+binaire.value = (decimal.value-0).toString(2);
+octal.value = (decimal.value-0).toString(8);
+}
+
+/**************/
+
+function xhexadecimal()
+{
+decimal = document.getElementById("decimal");
+hexadecimal = document.getElementById("hexadecimal");
+binaire = document.getElementById("binaire");
+octal=document.getElementById("octal");
+ 
+decimal.value = parseInt(hexadecimal.value,16);
+binaire.value = (parseInt(hexadecimal.value,16)).toString(2);
+octal.value = (decimal.value-0).toString(8);
+}
+
+
+/**************/
+
+
+
+function xbinaire()
+{
+decimal = document.getElementById("decimal");
+hexadecimal = document.getElementById("hexadecimal");
+binaire = document.getElementById("binaire");
+octal=document.getElementById("octal")
+ 
+decimal.value = parseInt(binaire.value,2);
+hexadecimal.value = (parseInt(binaire.value,2)).toString(16);
+octal.value = (decimal.value-0).toString(8);
+}
+
+function xoctal()
+{
+decimal = document.getElementById("decimal");
+hexadecimal = document.getElementById("hexadecimal");
+binaire = document.getElementById("binaire");
+octal=document.getElementById("octal")
+ 
+//decimal.value = (parseInt(octal.value,2)).toString(16);
+hexadecimal.value = (parseInt(octal.value,8)).toString(16);
+binaire.value = (parseInt(hexadecimal.value,16)).toString(2);
+decimal.value = parseInt(binaire.value,2);
+
+
+}
+
+ 
+	</script>
+	<style type="text/css">
+		body{
+			background: linear-gradient(90deg,#130f40,#95afc0,#130f40);
+			margin: 0;
+			padding: 0;
+			
+		}
+		.navv{
+			background-color: #130f40;
+			top: 0;
+			margin: 0px;
+			top: 0px;
+			right: 0px;
+			width: 100%;
+			height: 10%;
+			position: fixed;
+
+			
+		}
+		.navv h1{
+			color: #95afc0;
+		}
+		.calcul{
+			margin-top: 15%;
+		}
+		
+		table{
+			
+			font-family: sans-serif;
+		}
+		td{
+			
+			padding: 20px;
+		}
+
+		#butd,#buth,#butb,#buto{
+			background: linear-gradient(300deg,#130f40,#95afc0,#130f40);
+			font-size: 25px;
+			border-radius: 4px;
+			border: 2px solid #574b90;
+			box-shadow: 0 0 1em #dff9fb;
+			width: 150px;
+			color: #130f40;
+		}
+
+		#decimal,#hexadecimal,#binaire,#octal{
+			background-color: rgba(0, 0, 0, 0);
+			border: 2px solid #574b90;
+  			border-radius: 4px;
+  			font-size: 20px;
+  			box-shadow: 0 0 1em #dff9fb;
+		}
+
+		label{
+			background: linear-gradient(300deg,#130f40,#95afc0,#130f40);
+			font-size: 25px;
+
+			border-radius: 4px;
+			border: 2px solid #574b90;
+			box-shadow: 0 0 1em #dff9fb;
+			width: 150px;
+			color: #130f40;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="navbar">
+		<nav class="navv">
+		<center>	<h1>Système numérique</h1></center>
+		</nav>
+	</div>
+	<div class="calcul">
+		<center>
+			<table>
+				<tr>
+					<td>
+						<label>Decimal</label>
+					</td>
+					<td>
+						<input type="text" id="decimal"> 
+					</td>
+					<td>
+						<input type="button" id="butd" onclick="xdecimal()" value="test">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Hexadecimal</label>
+					</td>
+					<td>
+						<input type="text" id="hexadecimal"> 
+					</td>
+					<td>
+						<input type="button" id="buth" value="test" onclick="xhexadecimal()">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Binaire</label>
+					</td>
+					<td>
+						<input type="text" id="binaire"> 
+					</td>
+					<td>
+						<input type="button" id="butb" value="test" onclick="xbinaire()">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Octal</label>
+					</td>
+					<td>
+						<input type="text" id="octal"> 
+					</td>
+					<td>
+						<input type="button" id="buto" value="test" onclick="xoctal()">
+					</td>
+				</tr>
+			</table>
+		</center>
+	</div>
+</body>
+</html>
